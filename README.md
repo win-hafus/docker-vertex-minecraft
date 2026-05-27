@@ -59,10 +59,6 @@ docker compose up -d
 └── .env.example
 ```
 
-## Topics
-
-`minecraft` `docker` `docker-compose` `self-hosted` `prometheus` `mariadb` `velocity` `discordsrv` `coreprotect` `monitoring` `homelab`
-
 ## Acknowledgements
 
 - [PaperMC](https://papermc.io/) — Minecraft server software
