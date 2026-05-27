@@ -74,8 +74,8 @@ docker compose up -d
 
 ## Author
 
-[Hafus -- Gitea](https://git-vertex-homelab.mooo.com/hafus)
-[win-hafus -- GitHub][https://github.com/win-hafus/]
+- [Hafus - Gitea](https://git-vertex-homelab.mooo.com/hafus)
+- [Win-Hafus - GitHub](https://github.com/win-hafus/)
 
 ## License
 
