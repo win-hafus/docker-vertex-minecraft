@@ -1,9 +1,9 @@
 FROM eclipse-temurin:21-jre-alpine
 
 RUN apk add --no-cache curl gettext && \
-    mkdir -p /srv/minecraft/vertex && \
+    mkdir -p /srv/minecraft/vertex /run/minecraft && \
     adduser -D -h /srv/minecraft/vertex hfv5 && \
-    chown hfv5:hfv5 /srv/minecraft/vertex && \
+    chown hfv5:hfv5 /srv/minecraft/vertex /run/minecraft && \
     chmod 750 /srv/minecraft/vertex
 
 WORKDIR /srv/minecraft/vertex
