@@ -8,7 +8,7 @@ Docker Compose configuration for the Vertex System Minecraft server.
 |---|---|---|
 | `minecraft-server` | Dockerfile (`./minecraft`) | Minecraft server (Paper/Spigot) |
 | `mariadb` | Dockerfile (`./mariadb`) | Database for CoreProtect and DiscordSRV |
-| `velocity` *(disabled)* | Dockerfile (`./velocity`) | Velocity proxy |
+| `velocity` | Dockerfile (`./velocity`) | Velocity proxy |
 | `node-exporter` | `prom/node-exporter` | Host metrics for Prometheus |
 | `json-exporter` | `prometheuscommunity/json-exporter` | JSON metrics export |
 | `blackbox-exporter` | `prom/blackbox-exporter` | Availability probing |
