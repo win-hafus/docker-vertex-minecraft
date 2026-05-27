@@ -42,17 +42,17 @@ services:
           memory: ${MINECRAFT_MEMORY_LIMIT}
           cpus: '${MINECRAFT_CPU_LIMIT}'
 
-  # proxy-server:
-  #   <<: *host-network
-  #   build:
-  #     context: ./velocity
-  #     dockerfile: Dockerfile
-  #   environment:
-  #     - VELOCITY_FORWARDING_SECRET=${VELOCITY_FORWARDING_SECRET}
-  #   volumes:
-  #     - ./velocity/logs:/srv/minecraft/velocity/logs
-  #     - ./velocity/plugins:/srv/minecraft/velocity/plugins
-  #   restart: unless-stopped
+  proxy-server:
+    <<: *host-network
+    build:
+      context: ./velocity
+      dockerfile: Dockerfile
+    environment:
+      - VELOCITY_FORWARDING_SECRET=${VELOCITY_FORWARDING_SECRET}
+    volumes:
+      - ./velocity/logs:/srv/minecraft/velocity/logs
+      - ./velocity/plugins:/srv/minecraft/velocity/plugins
+    restart: unless-stopped
 
   node-exporter:
     image: prom/node-exporter:latest
