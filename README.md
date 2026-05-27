@@ -59,6 +59,12 @@ docker compose up -d
 └── .env.example
 ```
 
+## Features
+ 
+### Account Authentication
+ 
+The server uses a custom-built plugin that generates a unique UUID for each player based on `nickname + timestamp`. This UUID is then bound to the player's Discord account via DiscordSRV, adding two-factor authentication — giving cracked (offline-mode) server users a solid level of account security.
+
 ## Acknowledgements
 
 - [PaperMC](https://papermc.io/) — Minecraft server software
