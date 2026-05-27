@@ -1,0 +1,38 @@
+# Русские сообщения для DiscordSRV
+
+# Команда /discord link
+MinecraftAccountLinked: "&aВаш аккаунт успешно привязан к Discord: %username%!"
+MinecraftAccountAlreadyLinked: "&cВаш аккаунт уже привязан к Discord!"
+MinecraftNoLinkedAccount: "&cУ вас нет привязанного Discord аккаунта!"
+MinecraftLinkingCode: "&eВаш код для привязки: &a%code%\n&eОтправьте боту в Discord: &a%code%"
+MinecraftUnknownCode: "&cНеверный код привязки!"
+
+# Команда /discord unlink
+DiscordAccountUnlinked: "&aВаш Discord аккаунт отвязан!"
+
+# Уведомления при входе
+UnlinkCommandSuccess: "&aВаш аккаунт отвязан от Discord"
+CodeGenerated: "&eВаш код для привязки Discord: &a%code%\n&eНапишите боту (Vertex Auth) этот код"
+
+# Сообщения в Discord
+DiscordAccountLinked: "✅ Ваш Discord аккаунт привязан к игроку **%name%**!"
+DiscordAccountAlreadyLinked: "❌ Ваш Discord аккаунт уже привязан!"
+DiscordLinkedAccountRequired: "⚠️ Вы должны привязать свой Minecraft аккаунт!\nИспользуйте команду `/discord link` в игре."
+DiscordLinkedAccountCheckFailed: "❌ Не удалось проверить привязку аккаунта."
+DiscordNoLinkedAccount: "❌ У вас нет привязанного Minecraft аккаунта!"
+DiscordUnknownCode: "❌ Неверный код привязки!"
+
+# Сообщения о статусе сервера
+ServerStartupMessage: ":white_check_mark: **Сервер запущен и готов к игре!**"
+ServerShutdownMessage: ":octagonal_sign: **Сервер остановлен**"
+
+# Сообщения о входе/выходе игроков
+MinecraftPlayerJoinMessage: ":arrow_right: **%displayname%** зашёл на сервер"
+MinecraftPlayerLeaveMessage: ":arrow_left: **%displayname%** вышел с сервера"
+MinecraftPlayerFirstJoinMessage: ":tada: **%displayname%** впервые зашёл на сервер!"
+
+# Сообщения о смерти
+MinecraftPlayerDeathMessage: ":skull: %deathmessage%"
+
+# Сообщения о достижениях
+MinecraftPlayerAchievementMessage: ":trophy: **%displayname%** получил достижение **%achievement%**!"

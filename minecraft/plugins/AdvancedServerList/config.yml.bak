@@ -1,0 +1,20 @@
+unknownPlayer:
+  name: "Anonymous"
+  uuid: "606e2ff0-ed77-4842-9d6c-e1d3321c7838"
+disableCache: false
+checkUpdates: true
+debug: false
+printBanner: true
+faviconCacheTime: 1
+faviconResizeStrategy: 'resize'
+disableDuringMaintenance:
+  motd: true
+  favicon: true
+  hidePlayers: true
+  hidePlayersHover: true
+  playerCountText: true
+  playerCountHover: true
+  extraPlayers: true
+  maxPlayers: true
+  onlinePlayers: true
+configVersion: 10

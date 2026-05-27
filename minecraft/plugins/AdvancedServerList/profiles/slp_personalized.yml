@@ -1,0 +1,21 @@
+priority: 0
+condition: ${player name} != "Anonymous"
+motd: []
+playerCount:
+    hover:
+    - <green>С возвращением, <bold>${player name}<green>!
+    - <bold>${server playersOnline}/${server playersMax} <green> уже играют!
+    text: ''
+    hidePlayers: false
+    hidePlayersHover: false
+    extraPlayers:
+        enabled: false
+        amount: '0'
+    maxPlayers:
+        enabled: false
+        amount: '0'
+    onlinePlayers:
+        enabled: false
+        amount: '0'
+favicon: ''
+profiles: []

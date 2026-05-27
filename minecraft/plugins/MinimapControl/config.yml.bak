@@ -1,0 +1,52 @@
+world-id: 42e4dcbf-2cb0-4a09-b51b-2ebbff49260d
+global-journeymap-config: {journeymap-enabled: 'true', use-world-id: 'true', view-only-server-properties: 'true',
+    allow-multiplayer-settings: ALL, world-player-radar: NONE, world-player-radar-update-time: '5',
+    see-underground-players: NONE, hide-ops: 'false', hide-spectators: 'false', allow-death-points: 'true',
+    show-in-game-beacons: 'true', allow-waypoints: 'true', allow-right-click-teleport: 'false',
+    radar-lateral-distance: '512', radar-vertical-distance: '320', max-animals-data: '0',
+    max-ambient-creatures-data: '0', max-mobs-data: '0', max-players-data: '0', max-villagers-data: '0',
+    max-vehicles-data: '0', teleport-enabled: 'false', cross-dim-teleport: 'false',
+    render-range: '0', surface-render-range: '0', cave-render-range: '0', surface-mapping: ALL,
+    topo-mapping: ALL, biome-mapping: ALL, cave-mapping: NONE, radar-enabled: NONE,
+    player-radar-enabled: 'false', player-radar-names-enabled: 'false', villager-radar-enabled: 'false',
+    animal-radar-enabled: 'false', mob-radar-enabled: 'false', config-version: 6.1.0-beta99}
+global-xaeros-config: {cave-mode: false, nether-cave-mode: true, radar: true}
+global-voxel-config: {radar-allowed: false, radar-mobs-allowed: false, radar-players-allowed: false,
+    caves-allowed: false, teleport-command: ''}
+default-world-config: {enabled: 'true', teleport-enabled: 'false', render-range: '0',
+    surface-mapping: ALL, topo-mapping: ALL, biome-mapping: ALL, cave-mapping: NONE,
+    radar-enabled: NONE, player-radar-enabled: 'false', villager-radar-enabled: 'false',
+    animal-radar-enabled: 'false', mob-radar-enabled: 'false', max-vehicles-data: '0',
+    config-version: 6.1.0-beta99}
+worlds:
+    world:
+        world-id: 59d63f64-8a02-4e4d-83ba-aef5dd471366
+        journeymap-config: {enabled: 'true', teleport-enabled: 'false', render-range: '0',
+            surface-mapping: ALL, topo-mapping: ALL, biome-mapping: ALL, cave-mapping: NONE,
+            radar-enabled: NONE, player-radar-enabled: 'false', villager-radar-enabled: 'false',
+            animal-radar-enabled: 'false', mob-radar-enabled: 'false', max-vehicles-data: '0',
+            config-version: 6.1.0-beta99}
+        xaeros-config: {enabled: true, cave-mode: false, nether-cave-mode: true, radar: false}
+        voxel-config: {enabled: true, radar-allowed: false, radar-mobs-allowed: false,
+            radar-players-allowed: false, caves-allowed: false, teleport-command: ''}
+    world_the_end:
+        world-id: 72032224-da23-4fbc-a64d-05dc0327d48f
+        journeymap-config: {enabled: 'true', teleport-enabled: 'false', render-range: '0',
+            surface-mapping: ALL, topo-mapping: ALL, biome-mapping: ALL, cave-mapping: NONE,
+            radar-enabled: NONE, player-radar-enabled: 'false', villager-radar-enabled: 'false',
+            animal-radar-enabled: 'false', mob-radar-enabled: 'false', max-vehicles-data: '0',
+            config-version: 6.1.0-beta99}
+        xaeros-config: {enabled: true, cave-mode: false, nether-cave-mode: false,
+            radar: false}
+        voxel-config: {enabled: true, radar-allowed: false, radar-mobs-allowed: false,
+            radar-players-allowed: false, caves-allowed: false, teleport-command: ''}
+    world_nether:
+        world-id: 4c9453a0-cc2f-4905-9646-51b48bbbadfe
+        journeymap-config: {enabled: 'true', teleport-enabled: 'false', render-range: '0',
+            surface-mapping: ALL, topo-mapping: ALL, biome-mapping: ALL, cave-mapping: NONE,
+            radar-enabled: NONE, player-radar-enabled: 'false', villager-radar-enabled: 'false',
+            animal-radar-enabled: 'false', mob-radar-enabled: 'false', max-vehicles-data: '0',
+            config-version: 6.1.0-beta99}
+        xaeros-config: {enabled: true, cave-mode: false, nether-cave-mode: true, radar: false}
+        voxel-config: {enabled: true, radar-allowed: false, radar-mobs-allowed: false,
+            radar-players-allowed: false, caves-allowed: false, teleport-command: ''}

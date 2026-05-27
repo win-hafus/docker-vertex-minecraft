@@ -1,0 +1,34 @@
+modules:
+  tps:
+    metrics:
+      - name: spark_tps_one_minute
+        path: "{.oneMinute}"
+        help: TPS 1 minute average
+      - name: spark_tps_ten_seconds
+        path: "{.tenSeconds}"
+        help: TPS 10 seconds average
+  mspt:
+    metrics:
+      - name: spark_mspt_one_minute_mean
+        path: "{.oneMinute.mean}"
+        help: MSPT 1 minute mean
+      - name: spark_mspt_one_minute_max
+        path: "{.oneMinute.max}"
+        help: MSPT 1 minute max
+      - name: spark_mspt_ten_seconds_mean
+        path: "{.tenSeconds.mean}"
+        help: MSPT 10 seconds mean
+      - name: spark_mspt_ten_seconds_max
+        path: "{.tenSeconds.max}"
+        help: MSPT 10 seconds max
+  cpu:
+    metrics:
+      - name: spark_cpu_one_minute
+        path: "{.oneMinute}"
+        help: CPU 1 minute average
+      - name: spark_cpu_ten_seconds
+        path: "{.tenSeconds}"
+        help: CPU 10 seconds average
+      - name: spark_cpu_fifteen_minutes
+        path: "{.fifteenMinutes}"
+        help: CPU 15 minutes average

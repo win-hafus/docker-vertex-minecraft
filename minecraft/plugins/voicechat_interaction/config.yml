@@ -1,0 +1,6 @@
+enable_group_voice: true
+enable_whisper_voice: false
+enable_sneak_voice: true
+activation_db_threshold: -50
+toggle_default_state: true
+activation_cooldown_ticks: 20

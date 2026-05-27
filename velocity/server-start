@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+FIFO=/run/minecraft/velocity.stdin
+
+mkfifo -m 600 "$FIFO" 2>/dev/null || true
+
+tail -f /dev/null > "$FIFO" &
+TAIL_PID=$!
+
+exec java \
+  -Xms512M -Xmx512M \
+  -XX:+UseZGC -XX:+ZGenerational \
+  -XX:+UnlockExperimentalVMOptions \
+  -XX:+AlwaysPreTouch \
+  -XX:+DisableExplicitGC \
+  -XX:+UseStringDeduplication \
+  -XX:+PerfDisableSharedMem \
+  -XX:ReservedCodeCacheSize=128M \
+  -XX:MaxInlineLevel=20 \
+  -Dvelocity.packet-decode-logging=false \
+  -jar /srv/minecraft/velocity/velocity.jar \
+  < "$FIFO"

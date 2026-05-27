@@ -1,0 +1,20 @@
+priority: 2
+motd:
+- <white>Пока что <red>неизвестный,
+- <white>но уже публичный сервер <green>друзей!
+playerCount:
+    hover: []
+    text: ''
+    hidePlayers: false
+    hidePlayersHover: false
+    extraPlayers:
+        enabled: false
+        amount: '0'
+    maxPlayers:
+        enabled: false
+        amount: '0'
+    onlinePlayers:
+        enabled: false
+        amount: '0'
+favicon: ''
+profiles: []

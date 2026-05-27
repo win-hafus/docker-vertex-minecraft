@@ -1,0 +1,97 @@
+x-host-network: &host-network
+  network_mode: host
+  extra_hosts:
+    - "gentoo:127.0.0.1"
+
+x-healthcheck-timings: &healthcheck-timings
+  interval: ${HEALTHCHECK_INTERVAL}
+  timeout: ${HEALTHCHECK_TIMEOUT}
+  retries: ${HEALTHCHECK_RETRIES}
+  start_period: ${HEALTHCHECK_START_PERIOD}
+
+services:
+  minecraft-server:
+    <<: *host-network
+    build:
+      context: ./minecraft
+      dockerfile: Dockerfile
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - MYSQL_DATABASE_COREPROTECT=${MYSQL_DATABASE_COREPROTECT}
+      - MYSQL_PASSWORD_COREPROTECT=${MYSQL_PASSWORD_COREPROTECT}
+      - MYSQL_DATABASE_DISCORDSRV=${MYSQL_DATABASE_DISCORDSRV}
+      - MYSQL_PASSWORD_DISCORDSRV=${MYSQL_PASSWORD_DISCORDSRV}
+      - DISCORDSRV_BOT_TOKEN=${DISCORDSRV_BOT_TOKEN}
+    volumes:
+      # Configs
+      - ./minecraft/server.properties:/srv/minecraft/vertex/server.properties:ro
+      - ./minecraft/server-icon.png:/srv/minecraft/vertex/server-icon.png:ro
+      # Runtime data
+      - ./minecraft/plugins:/srv/minecraft/vertex/plugins
+      - ./minecraft/libraries:/srv/minecraft/vertex/libraries
+      - ./minecraft/logs:/srv/minecraft/vertex/logs
+      # Worlds
+      - ./minecraft/world:/srv/minecraft/vertex/world
+      - ./minecraft/world_nether:/srv/minecraft/vertex/world_nether
+      - ./minecraft/world_the_end:/srv/minecraft/vertex/world_the_end
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: ${MINECRAFT_MEMORY_LIMIT}
+          cpus: '${MINECRAFT_CPU_LIMIT}'
+
+  # proxy-server:
+  #   <<: *host-network
+  #   build:
+  #     context: ./velocity
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     - VELOCITY_FORWARDING_SECRET=${VELOCITY_FORWARDING_SECRET}
+  #   volumes:
+  #     - ./velocity/logs:/srv/minecraft/velocity/logs
+  #     - ./velocity/plugins:/srv/minecraft/velocity/plugins
+  #   restart: unless-stopped
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    network_mode: host
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:9100/metrics"]
+      <<: *healthcheck-timings
+
+  json-exporter:
+    image: prometheuscommunity/json-exporter:latest
+    ports:
+      - "${JSON_EXPORTER_BIND_IP}:${JSON_EXPORTER_PORT}:7979"
+    volumes:
+      - ./json-exporter/config.yml:/config/config.yml
+    command:
+      - '--config.file=/config/config.yml'
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:7979/metrics"]
+      <<: *healthcheck-timings
+
+  blackbox-exporter:
+    image: prom/blackbox-exporter:latest
+    ports:
+      - "${BLACKBOX_EXPORTER_BIND_IP}:${BLACKBOX_EXPORTER_PORT}:9115"
+    volumes:
+      - ./blackbox/config.yml:/config/blackbox.yml
+    command:
+      - '--config.file=/config/blackbox.yml'
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:9115/health"]
+      <<: *healthcheck-timings

@@ -1,0 +1,51 @@
+# PictoMap Configuration
+
+database:
+  host: "${DB_HOST}"
+  port: ${DB_PORT}
+  database: "${MYSQL_DATABASE_DISCORDSRV}"
+  username: "discordsrv"
+  password: "${MYSQL_PASSWORD_DISCORDSRV}"
+  pool-size: 10
+
+images:
+  storage-path: "plugins/PictoMap/images/"
+  max-per-player: 5
+  max-file-size-mb: 10
+  max-resolution: 8192
+  allowed-formats:
+    - "png"
+    - "jpg"
+    - "jpeg"
+    - "webp"
+
+maps:
+  max-width: 10
+  max-height: 10
+  map-size: 128
+
+# HTTP API Integration (optional)
+# If bot and plugin are on the same machine with shared filesystem, set url to "disabled"
+# If bot and plugin are on different machines, set url to bot's HTTP server
+bot-api:
+  url: "http://192.168.10.2:3001"  # Set to "http://bot-ip:3000" to enable HTTP download, or "disabled" to use direct file access
+  key: "Calibrate6-Liqueur1-Emptier0-Payphone7-Pamphlet0"  # Only needed if HTTP is enabled
+
+messages:
+  prefix: "&8[&6PictoMap&8]&r "
+  no-permission: "&cYou don't have permission to use this command."
+  no-discord-link: "&cYou must link your Discord account first!"
+  invalid-format: "&cInvalid format! Use: /pictomap <width>x<height> (e.g., /pictomap 2x2)"
+  request-created: "&aRequest created! Check your Discord DMs to upload an image."
+  too-many-images: "&cYou have reached the maximum number of stored images ({max})."
+  image-approved: "&aYour image has been approved! Click below to claim your maps."
+  claim-button: "&a&l[CLAIM MAPS]"
+  claim-hover: "&7Click to claim your maps\n&7Required: &e{count} empty maps"
+  not-enough-maps: "&cYou need {required} empty maps in your inventory!"
+  maps-claimed: "&aSuccessfully claimed {count} maps!"
+  reload-success: "&aConfiguration reloaded successfully!"
+  image-deleted: "&aImage deleted successfully!"
+  request-approved: "&aRequest approved!"
+  request-denied: "&aRequest denied!"
+  player-not-found: "&cPlayer not found!"
+  request-not-found: "&cRequest not found!"

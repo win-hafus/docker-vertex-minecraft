@@ -1,0 +1,37 @@
+prefix: '&8[&6Foxes&8] &r'
+no-permission: '&c✘ У вас нет прав на это.'
+tame-success: '&a❤ Лиса доверилась вам! ❤'
+tame-fail: '&c☹ Лиса испугалась и убежала...'
+limit-reached: '&c✘ Достигнут лимит лис! (%limit% макс.)'
+not-owner: '&c⛔ Это не ваша лиса.'
+fox-death: '&c☠ Ваша лиса погибла... ☠'
+fox-spawned: '&a✔ Лиса успешно создана!'
+command-sit: '&6⬇ Сидеть!'
+command-sleep: '&9💤 Спать...'
+command-follow: '&a⬆ За мной!'
+item-taken: '&e🎒 Лиса взяла предмет.'
+chat-enter-name: '&a✎ Введите новое имя в чат (или ''cancel''):'
+command-give-usage: '&e⚠ Использование: /givefox <игрок> [red/snow]'
+player-not-found: '&c✘ Игрок %player% не найден.'
+give-success-sender: '&a✔ Вы выдали лису (%type%) игроку %player%.'
+give-success-target: '&a★ Вам подарили лису (%type%)! Берегите её.'
+fox-teleported: Лисичка теперь возле вас!
+gui-main-title: 🦊 Мои Лисички (%count%)
+gui-settings-title: ⚙ Настройки Лисы
+gui-fox-default-name: Лиса
+gui-btn-rename: '&6✎ Сменить имя'
+gui-lore-rename: '&7Текущее: &f%name%'
+gui-btn-change-type: '&b🎨 Сменить цвет'
+gui-lore-change-type: '&7Текущий: &f%type%'
+type-red: Рыжая
+type-snow: Снежная
+gui-btn-take-item: '&e🎒 Предмет в зубах'
+gui-lore-take-item: '&7Нажми, чтобы забрать'
+gui-item-empty: '&c✖ В зубах пусто'
+gui-lore-empty: '&7Дайте предмет через &fShift+PKM'
+gui-btn-teleport: '&d🔮 Телепортировать ко мне'
+gui-lore-teleport: '&7Если лиса потерялась'
+gui-btn-back: '&c◀ Назад'
+state-walking: Гуляет
+state-sitting: Сидит
+state-sleeping: Спит
