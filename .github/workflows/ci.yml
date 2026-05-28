@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  lint:
+    name: Lint & Validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Lint Dockerfile (minecraft)
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: minecraft/Dockerfile
+
+      - name: Lint Dockerfile (velocity)
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: velocity/Dockerfile
+
+      - name: ShellCheck (minecraft)
+        uses: ludeeus/action-shellcheck@master
+        with:
+          scandir: ./minecraft
+          severity: warning
+
+      - name: ShellCheck (velocity)
+        uses: ludeeus/action-shellcheck@master
+        with:
+          scandir: ./velocity
+          severity: warning
+
+      - name: Validate docker-compose.yml
+        run: |
+          cp .env.example .env
+          docker compose config --quiet
