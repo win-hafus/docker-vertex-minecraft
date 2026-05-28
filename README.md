@@ -1,4 +1,4 @@
-# docker-minecraft
+# Vertex System
 
 Docker Compose configuration for the Vertex System Minecraft server.
 
