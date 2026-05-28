@@ -22,7 +22,8 @@ velocity/plugins/bStats/
 # Minecraft — server
 minecraft/.paper-remapped/
 minecraft/logs/
-minecraft/paper-global.yml
+minecraft/config/paper-global.yml
+minecraft/libraries
 
 # Minecraft — worlds
 minecraft/world/
