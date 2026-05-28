@@ -1,7 +1,8 @@
+libraries/
 world/
 world_nether/
 world_the_end/
+plugins/
 logs/
-cache/
-*.log
-*.tmp
+mariadb-java-client.jar
+*.db
