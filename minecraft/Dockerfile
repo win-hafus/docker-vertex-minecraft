@@ -9,7 +9,7 @@ RUN apk add --no-cache curl gettext && \
 WORKDIR /srv/minecraft/vertex
 
 COPY --chown=hfv5:hfv5 purpur.jar eula.txt server.properties spigot.yml server-start entrypoint.sh ./
-COPY --chown=hfv5:hfv5 paper-global.yml ./config/
+COPY --chown=hfv5:hfv5 config/paper-global.yml.template ./config/
 
 RUN chmod +x server-start entrypoint.sh
 
