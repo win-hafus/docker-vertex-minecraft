@@ -18,12 +18,14 @@ mariadb/data/
 velocity/forwarding.secret
 velocity/logs/
 velocity/plugins/bStats/
+velocity/velocity.jar
 
 # Minecraft — server
 minecraft/.paper-remapped/
 minecraft/logs/
 minecraft/config/paper-global.yml
 minecraft/libraries
+minecraft/purpur.jar
 
 # Minecraft — worlds
 minecraft/world/
