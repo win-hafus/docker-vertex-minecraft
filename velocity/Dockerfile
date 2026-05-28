@@ -1,6 +1,6 @@
 FROM eclipse-temurin:21-jre-alpine
 
-RUN apk add --no-cache gettext && \
+RUN apk add --no-cache gettext=0.24.1-r1 && \
     mkdir -p /srv/minecraft/velocity /run/minecraft /srv/minecraft/velocity/logs && \
     adduser -D -h /srv/minecraft/velocity hfv5 && \
     chown -R hfv5:hfv5 /srv/minecraft/velocity /run/minecraft && \

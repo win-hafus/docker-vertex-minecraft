@@ -1,6 +1,6 @@
 FROM eclipse-temurin:21-jre-alpine
 
-RUN apk add --no-cache curl gettext && \
+RUN apk add --no-cache curl=8.19.0-r0 gettext=0.24.1-r1 && \
     mkdir -p /srv/minecraft/vertex /run/minecraft && \
     adduser -D -h /srv/minecraft/vertex hfv5 && \
     chown hfv5:hfv5 /srv/minecraft/vertex /run/minecraft && \
