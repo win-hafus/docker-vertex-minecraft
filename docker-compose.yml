@@ -16,8 +16,6 @@ services:
       dockerfile: Dockerfile
     networks:
       - minecraft-net
-    extra_hosts:
-      - "${DB_HOST}:${DB_HOST}"
     environment:
       - DB_HOST=${DB_HOST}
       - DB_PORT=${DB_PORT}
