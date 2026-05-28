@@ -16,6 +16,11 @@ services:
       dockerfile: Dockerfile
     networks:
       - minecraft-net
+    ports:
+      - "24454:24454/udp"
+      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:25575:25575"
+      - "127.0.0.1:56787:56787"
     environment:
       - DB_HOST=${DB_HOST}
       - DB_PORT=${DB_PORT}
