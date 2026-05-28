@@ -4,9 +4,6 @@ FIFO=/run/minecraft/velocity.stdin
 
 mkfifo -m 600 "$FIFO" 2>/dev/null || true
 
-tail -f /dev/null > "$FIFO" &
-TAIL_PID=$!
-
 exec java \
   -Dfile.encoding=UTF-8 \
   -Xms512M -Xmx512M \
