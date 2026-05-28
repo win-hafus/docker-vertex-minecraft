@@ -15,7 +15,7 @@ RUN chmod +x server-start entrypoint.sh
 
 USER hfv5
 
-EXPOSE 25565 8080 8100
+EXPOSE 25566 8080
 
 ENTRYPOINT ["./entrypoint.sh"]
 CMD ["./server-start"]
