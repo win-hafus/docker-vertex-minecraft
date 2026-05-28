@@ -35,7 +35,7 @@ docker compose up -d
 
 ## Боже, храни РКН
 
-Я написал комментарий к коду, но уверен, что его никто не прочитает. Из-за того, что сервер работает в собственной подсети zapret может не обрабатывать его запросы к discord.com от чего вы не сможете подключиться, по крайней мере так у меня (I use Gentoo, btw). Вам нужно будет добавить пару правил к firewall запрета, если вы столкнулись с этой проблемой. Я использую `zapret-discord-youtube-linux`, поэтому конфиг лежит в `zapret-discord-youtube-linux/src/lib/firewall.sh`, если вы использует стандартный zapret, то он будет в `/opt/zapret/config`, но правила можно добавить и через `shell`:
+Я написал комментарий к коду, но уверен, что его никто не прочитает. Из-за того, что сервер работает в собственной подсети zapret, может не обрабатывать его запросы к discord.com от чего вы не сможете подключиться, по крайней мере так у меня (I use Gentoo, btw). Вам нужно будет добавить пару правил к firewall запрета, если вы столкнулись с этой проблемой. Я использую `zapret-discord-youtube-linux`, поэтому конфиг лежит в `zapret-discord-youtube-linux/src/lib/firewall.sh`, если вы использует стандартный zapret, то он будет в `/opt/zapret/config`, но правила можно добавить и через `shell`:
 ```bash
 doas nft add chain inet zapretunix forward { type filter hook forward priority filter \; policy accept \; }
 
