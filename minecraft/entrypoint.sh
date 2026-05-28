@@ -20,8 +20,8 @@ if [ -f /srv/minecraft/vertex/plugins/PictoMap/config.yml.template ]; then
 fi
 
 # Substitute environment variables in paper-global.yml
-if [ -f /srv/minecraft/vertex/paper-global.yml.template ]; then
-    envsubst < /srv/minecraft/vertex/paper-global.yml.template > /srv/minecraft/vertex/paper-global.yml
+if [ -f /srv/minecraft/vertex/config/paper-global.yml.template ]; then
+    envsubst < /srv/minecraft/vertex/config/paper-global.yml.template > /srv/minecraft/vertex/config/paper-global.yml
     echo "paper-global.yml updated with environment variables"
 fi
 
