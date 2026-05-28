@@ -12,7 +12,7 @@ x-healthcheck-timings: &healthcheck-timings
 services:
   minecraft-server:
     <<: *host-network
-    image: ghcr.io/win-hafus/docker/minecraft-server:latest
+    image: ghcr.io/win-hafus/docker-vertex-minecraft/minecraft-server:latest
     build:
       context: ./minecraft
       dockerfile: Dockerfile
@@ -47,7 +47,7 @@ services:
 
   proxy-server:
     <<: *host-network
-    image: ghcr.io/win-hafus/docker/proxy-server:latest
+    image: ghcr.io/win-hafus/docker-vertex-minecraft/proxy-server:latest
     build:
       context: ./velocity
       dockerfile: Dockerfile
