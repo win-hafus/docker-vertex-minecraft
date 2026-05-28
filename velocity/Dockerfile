@@ -1,8 +1,9 @@
 FROM eclipse-temurin:21-jre-alpine
 
-RUN mkdir -p /srv/minecraft/velocity /run/minecraft && \
+RUN apk add --no-cache gettext && \
+    mkdir -p /srv/minecraft/velocity /run/minecraft /srv/minecraft/velocity/logs && \
     adduser -D -h /srv/minecraft/velocity hfv5 && \
-    chown hfv5:hfv5 /srv/minecraft/velocity /run/minecraft && \
+    chown -R hfv5:hfv5 /srv/minecraft/velocity /run/minecraft && \
     chmod 750 /srv/minecraft/velocity
 
 WORKDIR /srv/minecraft/velocity

@@ -1,0 +1,8 @@
+db.host=${DB_HOST}
+db.port=${DB_PORT}
+db.name=${MYSQL_DATABASE_VDAUTH}
+db.user=${MYSQL_USERNAME_VDAUTH}
+db.password=${MYSQL_PASSWORD_VDAUTH}
+discordsrv.table_prefix=discordsrv
+messages.kick=\u00a7cВаш Discord не привязан.\n\u00a77Отправьте код \u00a7e{code}\u00a77 боту VertexAuth.
+messages.already_pending=\u00a7cЕще не привязан.\n\u00a77Код: \u00a7e{code}\u00a77 — отправьте боту.

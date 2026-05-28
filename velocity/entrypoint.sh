@@ -7,5 +7,10 @@ if [ -n "$VELOCITY_FORWARDING_SECRET" ]; then
     echo "Generated forwarding.secret from environment variable"
 fi
 
+if [ -f /srv/minecraft/velocity/plugins/velocity-discord-auth/config.properties.template ]; then
+    envsubst < /srv/minecraft/velocity/plugins/velocity-discord-auth/config.properties.template > /srv/minecraft/velocity/plugins/velocity-discord-auth/config.properties
+    echo "config.properties updated with environment variables"
+fi
+
 # Execute the original start command
 exec ./server-start
