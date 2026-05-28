@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download Purpur jar
         run: |
@@ -29,8 +29,7 @@ jobs:
 
       - name: Download Velocity jar
         run: |
-          SHA256=$(curl -fsSL "https://api.papermc.io/v2/projects/velocity/versions/3.5.0-SNAPSHOT/builds/599" \
-            | jq -r '.downloads.application.sha256')
+          SHA256=7f97f572222a58a860a3e1164f046f26dd28c5cabab2d1749a8901fe99be77b5
           curl -fSL "https://fill-data.papermc.io/v1/objects/${SHA256}/velocity-3.5.0-SNAPSHOT-599.jar" \
             -o velocity/velocity.jar
 
