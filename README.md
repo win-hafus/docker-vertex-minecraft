@@ -23,7 +23,9 @@ All services run with `network_mode: host`.
 ## Getting Started
 
 ```bash
-git clone https://git-vertex-homelab.mooo.com/Hafus/docker-minecraft.git
+git clone https://git-vertex-homelab.mooo.com/hafus/docker-minecraft.git
+# or
+git clone https://github.com/win-hafus/docker-vertex-minecraft.git
 cd docker-minecraft
 cp .env.example .env
 # Fill in .env
