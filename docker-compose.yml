@@ -21,8 +21,10 @@ services:
       - MYSQL_DATABASE_COREPROTECT=${MYSQL_DATABASE_COREPROTECT}
       - MYSQL_PASSWORD_COREPROTECT=${MYSQL_PASSWORD_COREPROTECT}
       - MYSQL_DATABASE_DISCORDSRV=${MYSQL_DATABASE_DISCORDSRV}
+      - MYSQL_USERNAME_DISCORDSRV=${MYSQL_USERNAME_DISCORDSRV}
       - MYSQL_PASSWORD_DISCORDSRV=${MYSQL_PASSWORD_DISCORDSRV}
       - DISCORDSRV_BOT_TOKEN=${DISCORDSRV_BOT_TOKEN}
+      - VELOCITY_FORWARDING_SECRET=${VELOCITY_FORWARDING_SECRET}
     volumes:
       # Configs
       - ./minecraft/server.properties:/srv/minecraft/vertex/server.properties:ro
@@ -49,6 +51,11 @@ services:
       dockerfile: Dockerfile
     environment:
       - VELOCITY_FORWARDING_SECRET=${VELOCITY_FORWARDING_SECRET}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - MYSQL_DATABASE_VDAUTH=${MYSQL_DATABASE_DISCORDSRV}
+      - MYSQL_USERNAME_VDAUTH=${MYSQL_USERNAME_VDAUTH}
+      - MYSQL_PASSWORD_VDAUTH=${MYSQL_PASSWORD_VDAUTH}
     volumes:
       - ./velocity/logs:/srv/minecraft/velocity/logs
       - ./velocity/plugins:/srv/minecraft/velocity/plugins

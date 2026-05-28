@@ -41,7 +41,7 @@ DiscordInviteLink: "https://discord.gg/P7tmXtMp"
 # JDBC (MySQL/MariaDB)
 Experiment_JdbcAccountLinkBackend: "jdbc:mysql://${DB_HOST}:${DB_PORT}/${MYSQL_DATABASE_DISCORDSRV}?autoReconnect=true&useSSL=false"
 Experiment_JdbcTablePrefix: "discordsrv"
-Experiment_JdbcUsername: "discordsrv"
+Experiment_JdbcUsername: "${MYSQL_USERNAME_DISCORDSRV}"
 Experiment_JdbcPassword: "${MYSQL_PASSWORD_DISCORDSRV}"
 
 # Webhook Delivery
