@@ -29,6 +29,7 @@ git clone https://github.com/win-hafus/docker-vertex-minecraft.git
 cd docker-minecraft
 cp .env.example .env
 # Fill in .env
+docker compose pull
 docker compose up -d
 ```
 
