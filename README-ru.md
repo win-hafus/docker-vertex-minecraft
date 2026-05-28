@@ -33,6 +33,27 @@ docker compose pull
 docker compose up -d
 ```
 
+## Боже, храни РКН
+
+Я написал комментарий к коду, но уверен, что его никто не прочитает. Из-за того, что сервер работает в собственной подсети zapret может не обрабатывать его запросы к discord.com от чего вы не сможете подключиться, по крайней мере так у меня (I use Gentoo, btw). Вам нужно будет добавить пару правил к firewall запрета, если вы столкнулись с этой проблемой. Я использую `zapret-discord-youtube-linux`, поэтому конфиг лежит в `zapret-discord-youtube-linux/src/lib/firewall.sh`, если вы использует стандартный zapret, то он будет в `/opt/zapret/config`, но правила можно добавить и через `shell`:
+```bash
+doas nft add chain inet zapretunix forward { type filter hook forward priority filter \; policy accept \; }
+
+doas nft add rule inet zapretunix forward \
+  meta mark != 0x40000000 \
+  tcp dport { 80, 443, 2053, 2083, 2087, 2096, 8443 } \
+  counter queue flags bypass to 220 comment \"Added by zapret script\"
+
+doas nft add rule inet zapretunix forward \
+  meta mark != 0x40000000 \
+  udp dport { 443, 19294-19344, 50000-50100 } \
+  counter queue flags bypass to 220 comment \"Added by zapret script\"
+```
+Если по-заумному это происходит потому что:
+> По умолчанию Zapret перехватывает только трафик самого хоста (`hook output`). Контейнеры Docker в bridge-сети маршрутизируют трафик через `hook forward`, поэтому без дополнительной настройки Discord и другие заблокированные ресурсы недоступны внутри контейнеров
+
+> Порты могут отличаться, смотря какая у тебя стратегия и как ты ее придерживаешься
+
 ## Конфигурация (.env)
 
 | Переменная | Описание |
